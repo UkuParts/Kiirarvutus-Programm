@@ -27,13 +27,13 @@ public class Kasutaja {
         return valedeVastusteArv;
     }
 
-    // set-meetodid
-    public void setMängudeArv(int mängudeArv) {
-        this.mängudeArv = mängudeArv;
+    // add-meetodid (lisab olemasolevale juurde)
+    public void addMängudeArv(int mängudeArv) {
+        this.mängudeArv += mängudeArv;
     }
 
-    public void setValedeVastusteArv(int valedeVastusteArv) {
-        this.valedeVastusteArv = valedeVastusteArv;
+    public void addValedeVastusteArv(int valedeVastusteArv) {
+        this.valedeVastusteArv += valedeVastusteArv;
     }
 
     // parima aja uuendamine kui saadud aeg on parem kui eelnev parim aeg

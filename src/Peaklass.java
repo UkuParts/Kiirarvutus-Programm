@@ -6,6 +6,7 @@ public class Peaklass {
         Timer taimer = new Timer();
         ArrayList<Kasutaja> kasutajad = new ArrayList<>();
         Kasutajaliides liides = new Kasutajaliides();
+        Kysimus valitudRaskusaste;
 
         // esialgne sisse logimine
         System.out.println("Sisesta kasutajanimi:");
@@ -30,9 +31,47 @@ public class Peaklass {
 
             System.out.println();
 
-            // tehetele vastamise mängu voor [WIP]
+            // mängu voor algab - tehetele vastamine
             if (sisestus.equals("0")) {
-                System.out.println();
+                System.out.println("Vali raskusaste:");
+                System.out.println("""
+                    [0] - Lihtne
+                    [1] - Keskmine
+                    [2] - Raske""");
+                sisestus = liides.päringKasutajale();
+                switch (sisestus) {
+                    case "0":
+                        valitudRaskusaste = new Kysimus(new GenereeriLihtne());
+                        break;
+                    case "1":
+                        valitudRaskusaste = new Kysimus(new GenereeriKeskmine());
+                        break;
+                    case "2":
+                        valitudRaskusaste = new Kysimus(new GenereerijaRaske());
+                        break;
+                    default:
+                        continue;
+                }
+                taimer.mõõdaAega();
+                for (int i = 0; i < 3; i++) {
+                    valitudRaskusaste.genereeriKysimus();
+                    boolean õigsus;
+                    do {
+                        System.out.println(valitudRaskusaste.getKysimus());
+                        sisestus = liides.päringKasutajale();
+                        õigsus = valitudRaskusaste.kontrolliVastus(Double.parseDouble(sisestus));
+                        if (!õigsus) System.out.println("Vale vastus, proovi uuesti");
+                    } while (!õigsus);
+                }
+                int saadudAeg = taimer.peataAeg();
+                int valesidKokku = valitudRaskusaste.mituValet();
+                aktiivneKasutaja.ajaKontroll(saadudAeg);
+                aktiivneKasutaja.addValedeVastusteArv(valesidKokku);
+                aktiivneKasutaja.addMängudeArv(1);
+                System.out.println("Said aja " + saadudAeg + " sekundit");
+                System.out.println("Vastasid valesti " + valesidKokku + " korda");
+                System.out.println("Jätkamiseks vajuta sisestusklahvi");
+                liides.päringKasutajale();
                 continue;
             }
 
@@ -59,7 +98,7 @@ public class Peaklass {
             // prindib ekraanile aktiivse kasutaja andmed
             if (sisestus.equals("2")) {
                 System.out.println(aktiivneKasutaja);
-                System.out.println("Jätkamiseks vajutage sisestusklahvi");
+                System.out.println("Jätkamiseks vajuta sisestusklahvi");
                 liides.päringKasutajale();
                 continue;
             }
