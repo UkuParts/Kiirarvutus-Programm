@@ -3,13 +3,13 @@ public class GenereerijaRaske extends Genereerija{
     public void genereeriUus() {
         double random = Math.random();
         if(random < 0.33){ // liitmine
-            genereeriTehe('+', 150, 200, true);
+            genereeriTehe('+', 500, 1000, true);
         }
         else if(random < 0.67){ // lahutamine
-            genereeriTehe('-', 100, 150, true);
+            genereeriTehe('-', 350, 700, true);
         }
         else{ // korrutamine
-            genereeriTehe('*', 30, 40, false);
+            genereeriTehe('*', 15, 15, false);
         }
     }
 }

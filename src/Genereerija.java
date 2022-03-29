@@ -16,9 +16,11 @@ public abstract class Genereerija {
         int teineLiige = (int)(Math.random() * variatsioon + alampiir);
         int kolmasLiige = (int)(Math.random() * variatsioon + alampiir);
 
+        // tekst
         tekst = esimeneLiige + " " + märk + " " + teineLiige;
         if(trinaarne) tekst += " " + märk + " " + kolmasLiige;
 
+        // vastus
         switch (märk) {
             case '+' -> {
                 vastus = esimeneLiige + teineLiige;
