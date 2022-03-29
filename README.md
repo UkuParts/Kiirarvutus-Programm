@@ -13,7 +13,7 @@ Programmi eesmark on panna kasutajat mõõtma oma matemaatiliste tehete peast ar
 ***Genereerija*** - Abstrakne klass, mille eesmärk on küsimused genereerida. Tähtsamad meetodid on: genereeriTehe, mis genereerib tehte antud parameetrite põhjal ja abstrakne meetod genereeriUus, mis genereerib uue tehte.<br/>
 ***GenereerijaLihtne, GenereerijaKeskmine, GenereerijaRakse*** - Genereerija alamklassid. Implementeerivad genereeriUus meetodit vastavalt raskusastmele.
 
-Projekt algas teema valimise ja tööjaotusega. Rühmaliikmete vahel oli klasside koostamine võrdselt ära jaotatud. Me kirjutasime omale määratud klassid iseseisvalt. Kui klassid olid valmis, siis panime need peaklassis kokku. Me lõpuks kohendasime oma panustatud koodi nii, et programm töötaks probleemidetta.
+Projekt algas teema valimise ja tööjaotusega. Rühmaliikmete vahel oli klasside koostamine võrdselt ära jaotatud. Me kirjutasime omale määratud klassid iseseisvalt. Kui klassid olid valmis, siis panime need peaklassis kokku. Lõpuks kohendasime oma panustatud koodi nii, et programm töötaks ilma probleemideta.
 
 **Rühmaliikmete panus:**<br/>
 Uku Parts kirjutas klassid Genereerija, GenereerijaLihtne, GenereerijaKeskmine, GenereerijaRaske, Kysimus. Ajakulu orienteeruvalt X tundi.<br/>
@@ -24,4 +24,4 @@ Projekti käigus eriti muresid ei tekkinud, kuna projekti jaoks valitud teema ol
 **Lõpptulemuse hinnang:**<br/>
 Viisime täide seatud eesmärgi ja programm töötab nagu planeeritud.
 
-Katsetasime programmi lahendades tehteid igas raskusastmes mitme kasutajaga. Kontrollisime, et iga kasutaja andmed säiliksid ja oleksid õiged.
+Katsetasime programmi lahendades tehteid igas raskusastmes erinevate loodud kasutajatega. Kontrollisime, et iga kasutaja andmed säiliksid ja oleksid õiged.
