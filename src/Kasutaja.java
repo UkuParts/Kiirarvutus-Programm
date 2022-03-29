@@ -1,7 +1,9 @@
 public class Kasutaja {
     // isendiväljad
     private final String kasutajaNimi;
-    private int parimAeg;
+    private int parimAegLihtne;
+    private int parimAegKeskmine;
+    private int parimAegRaske;
     private int mängudeArv;
     private int valedeVastusteArv;
 
@@ -15,18 +17,6 @@ public class Kasutaja {
         return kasutajaNimi;
     }
 
-    public int getParimAeg() {
-        return parimAeg;
-    }
-
-    public int getMängudeArv() {
-        return mängudeArv;
-    }
-
-    public int getValedeVastusteArv() {
-        return valedeVastusteArv;
-    }
-
     // add-meetodid (lisab olemasolevale juurde)
     public void addMängudeArv(int mängudeArv) {
         this.mängudeArv += mängudeArv;
@@ -37,15 +27,22 @@ public class Kasutaja {
     }
 
     // parima aja uuendamine kui saadud aeg on parem kui eelnev parim aeg
-    public void ajaKontroll(int saadudAeg) {
-        if (saadudAeg < parimAeg || parimAeg == 0) parimAeg = saadudAeg;
+    public void ajaKontroll(int saadudAeg, Genereerija raskusaste) {
+        if (raskusaste instanceof GenereerijaLihtne)
+            if (saadudAeg < parimAegLihtne || parimAegLihtne == 0) parimAegLihtne = saadudAeg;
+        if (raskusaste instanceof GenereerijaKeskmine)
+            if (saadudAeg < parimAegKeskmine || parimAegKeskmine == 0) parimAegKeskmine = saadudAeg;
+        if (raskusaste instanceof GenereerijaRaske)
+            if (saadudAeg < parimAegRaske || parimAegRaske == 0) parimAegRaske = saadudAeg;
     }
 
     // toString meetod
     @Override
     public String toString() {
         return "Kasutaja nimi: " + kasutajaNimi +
-               "\nParim aeg: " + parimAeg +
+               "\nParim aeg (lihtne): " + parimAegLihtne +
+               "\nParim aeg (keskmine): " + parimAegKeskmine +
+               "\nParim aeg (raske): " + parimAegRaske +
                "\nLäbitud mängude arv: " + mängudeArv +
                "\nValede vastuste arv: " + valedeVastusteArv;
     }
