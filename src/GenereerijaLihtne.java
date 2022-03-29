@@ -1,4 +1,4 @@
-public class GenereeriLihtne extends Genereerija{
+public class GenereerijaLihtne extends Genereerija{
     @Override
     public void genereeriUus() {
         if(Math.random() < 0.5){ // liitmine

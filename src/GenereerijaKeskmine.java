@@ -1,4 +1,4 @@
-public class GenereeriKeskmine extends Genereerija{
+public class GenereerijaKeskmine extends Genereerija{
     @Override
     public void genereeriUus() {
         double random = Math.random();

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Peaklass {
     public static void main(String[] args) {
@@ -6,7 +7,7 @@ public class Peaklass {
         Timer taimer = new Timer();
         ArrayList<Kasutaja> kasutajad = new ArrayList<>();
         Kasutajaliides liides = new Kasutajaliides();
-        Kysimus valitudRaskusaste;
+        Genereerija valitudRaskusaste;
 
         // esialgne sisse logimine
         System.out.println("Sisesta kasutajanimi:");
@@ -41,30 +42,34 @@ public class Peaklass {
                 sisestus = liides.päringKasutajale();
                 switch (sisestus) {
                     case "0":
-                        valitudRaskusaste = new Kysimus(new GenereeriLihtne());
+                        valitudRaskusaste = new GenereerijaLihtne();
                         break;
                     case "1":
-                        valitudRaskusaste = new Kysimus(new GenereeriKeskmine());
+                        valitudRaskusaste = new GenereerijaKeskmine();
                         break;
                     case "2":
-                        valitudRaskusaste = new Kysimus(new GenereerijaRaske());
+                        valitudRaskusaste = new GenereerijaRaske();
                         break;
                     default:
                         continue;
                 }
+                List<Kysimus> kysimused = new ArrayList<>();
+                for(int i = 0; i < 10; i++) kysimused.add(new Kysimus(valitudRaskusaste));
                 taimer.mõõdaAega();
-                for (int i = 0; i < 3; i++) {
-                    valitudRaskusaste.genereeriKysimus();
+                for (int i = 0; i < 10; i++) {
+                    Kysimus kysimus = kysimused.get(i);
+                    kysimus.genereeriKysimus();
                     boolean õigsus;
                     do {
-                        System.out.println(valitudRaskusaste.getKysimus());
+                        System.out.println(kysimus.getKysimus());
                         sisestus = liides.päringKasutajale();
-                        õigsus = valitudRaskusaste.kontrolliVastus(Double.parseDouble(sisestus));
+                        õigsus = kysimus.kontrolliVastus(Integer.parseInt(sisestus));
                         if (!õigsus) System.out.println("Vale vastus, proovi uuesti");
                     } while (!õigsus);
                 }
                 int saadudAeg = taimer.peataAeg();
-                int valesidKokku = valitudRaskusaste.mituValet();
+                int valesidKokku = 0;
+                for(Kysimus kysimus : kysimused) valesidKokku += kysimus.mituValet();
                 aktiivneKasutaja.ajaKontroll(saadudAeg);
                 aktiivneKasutaja.addValedeVastusteArv(valesidKokku);
                 aktiivneKasutaja.addMängudeArv(1);
