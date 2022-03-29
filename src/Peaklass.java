@@ -8,7 +8,7 @@ public class Peaklass {
         ArrayList<Kasutaja> kasutajad = new ArrayList<>();
         Kasutajaliides liides = new Kasutajaliides();
         Genereerija valitudRaskusaste;
-        int mänguPikkus = 2;
+        int mänguPikkus = 10;
 
         // esialgne sisse logimine
         System.out.println("Sisesta kasutajanimi:");
