@@ -16,7 +16,7 @@ Programmi eesmark on panna kasutajat mõõtma oma matemaatiliste tehete peast ar
 Projekt algas teema valimise ja tööjaotusega. Rühmaliikmete vahel oli klasside koostamine võrdselt ära jaotatud. Me kirjutasime omale määratud klassid iseseisvalt. Kui klassid olid valmis, siis panime need peaklassis kokku. Lõpuks kohendasime oma panustatud koodi nii, et programm töötaks ilma probleemideta.
 
 **Rühmaliikmete panus:**<br/>
-Uku Parts kirjutas klassid Genereerija, GenereerijaLihtne, GenereerijaKeskmine, GenereerijaRaske, Kysimus. Ajakulu orienteeruvalt X tundi.<br/>
+Uku Parts kirjutas klassid Genereerija, GenereerijaLihtne, GenereerijaKeskmine, GenereerijaRaske, Kysimus. Ajakulu orienteeruvalt 3 tundi.<br/>
 Kristofer Lill kirjutas klassid Kasutaja, Kasutajaliides, Timer, Peaklass. Ajakulu orienteeruvalt 3 tundi.
 
 Projekti käigus eriti muresid ei tekkinud, kuna projekti jaoks valitud teema oli mõlema rühmaliikme jaoks piisavalt teostatav.
